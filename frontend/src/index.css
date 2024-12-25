@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  height: 100%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  height: 100vh;
+}
+
+@layer components {
+  input {
+    background-color: theme('colors.bright');
+  }
+
+  .btn {
+    @apply w-80 rounded-2xl transition-all !important;
+
+    & svg {
+      @apply mr-3;
+    }
+
+    &:hover {
+      @apply scale-105 !important;
+    }
+  }
+
+  .big-white-box {
+    border-radius: 16px;
+    padding: 24px;
+    margin: 16px;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-light shadow-md;
+    @apply text-white !important;
+  }
+
+  .btn-danger {
+    @apply bg-gradient-to-r from-red-600 to-red-500 shadow-md;
+    @apply text-white !important;
+  }
+
+  .btn-white {
+    @apply bg-white text-dark shadow-md !important;
+  }
+
+  .btn-bright {
+    @apply bg-bright text-dark shadow-md !important;
+  }
+
+
+  .btn.Mui-disabled {
+    /* need to apply it with gradient since backgroundcolor alone doenst overwrite the gradients */
+    @apply bg-gray-300 bg-gradient-to-r from-gray-300 to-gray-300;
+    @apply text-gray-500 !important;
+  }
+
+  .dark-icon {
+    @apply text-dark !important;
+  }
+
+  .formcontrol {
+    @apply mt-10 !important;
+  }
+
+  .input-field {
+    @apply rounded-2xl bg-bright !important;
+
+    &:focus-within {
+      & fieldset {
+        @apply border-dark !important;
+      }
+    }
+
+    & label {
+      &:not(.Mui-error) {
+        @apply text-dark !important;
+      }
+    }
+
+    & fieldset {
+      @apply rounded-2xl border-bright !important;
+    }
+
+    & svg {
+      @apply text-dark;
+    }
+
+    &.disabled, .Mui-disabled {
+
+      & input {
+        @apply cursor-not-allowed !important;
+      }
+
+      & svg {
+        @apply text-gray-400 !important;
+      }
+    }
+  }
+
+  /* style gender dropdown */
+  #menu-gender .MuiPopover-paper.MuiMenu-paper {
+    @apply rounded-2xl bg-bright !important;
+  }
+
+  span.slider.MuiSlider-root {
+    & span.MuiSlider-rail {
+      @apply h-2 bg-gradient-to-r from-primary to-light !important;
+    }
+
+    & span.MuiSlider-track {
+      @apply h-2 border-0 bg-gradient-to-r from-primary to-light !important;
+    }
+
+    & span.MuiSlider-thumb {
+      /* @apply bg-gradient-to-r from-primary to-light border-0 h-6 w-6 !important;*/
+      @apply h-6 w-6 border-[3px] border-primary bg-white !important;
+    }
+  }
+
+  .helper-text {
+    @apply ml-4 h-4 pt-1 text-sm text-red-600 !important;
+  }
+
+  .category-chip {
+    @apply mr-2 rounded-full bg-bright px-2 py-5 text-lg text-dark !important;
+
+    &.white {
+      @apply bg-white !important;
+    }
+
+    & svg {
+      @apply text-dark !important;
+    }
+
+    &:hover {
+      @apply scale-105 transition-all !important;
+    }
+  }
+
+  .category-chip-seleceted {
+    @apply mr-2 rounded-full bg-gradient-to-r from-primary to-light px-2 py-5 text-lg text-white !important;
+
+    & svg {
+      @apply text-white !important;
+    }
+
+    &:hover {
+      @apply scale-105 transition-all !important;
+    }
+  }
+
+  .cut-text {
+    @apply overflow-hidden text-nowrap text-ellipsis;
+  }
+}
+
+#payment-message {
+  color: rgb(105, 115, 134);
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 12px;
+  text-align: center;
+}
+
+#payment-element {
+  margin-bottom: 24px;
+}

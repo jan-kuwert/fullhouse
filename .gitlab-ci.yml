@@ -1,0 +1,9 @@
+# .gitlab-ci.yml
+eslint:
+  image: node:20
+  script:
+    - npm ci
+    - prettier-formatter-gitlab 'prettier -l src/'
+  artifacts:
+    reports:
+      codequality: gl-codequality.json
